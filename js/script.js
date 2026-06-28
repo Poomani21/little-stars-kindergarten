@@ -23,7 +23,7 @@ const CONFIG = {
   testimonialInterval: 6000,
 
   // Background music volume (0.0 to 1.0)
-  musicVolume: 0.12
+  musicVolume: 0.18
 };
 
 /* ============================================================
@@ -74,31 +74,39 @@ function initNavigation() {
     header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  // Close mobile menu on link click
+  const navOverlay = document.getElementById('nav-overlay');
+
+  function closeMobileMenu() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMobileMenu);
+  }
+
   // Mobile menu toggle
-  navToggle.addEventListener('click', () => {
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = navMenu.classList.toggle('active');
     navToggle.classList.toggle('active', isOpen);
     navToggle.setAttribute('aria-expanded', isOpen);
+    if (navOverlay) navOverlay.classList.toggle('active', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  // Close mobile menu on link click
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
   });
 
   // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-      navMenu.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      closeMobileMenu();
     }
   });
 }
@@ -498,7 +506,8 @@ function initFooterYear() {
 }
 
 /* ============================================================
-   Background Music — Soft looping melody (Web Audio API)
+   Background Music — Rich multi-layer melody (Web Audio API)
+   Lead + harmony + bass + soft arpeggio with reverb feel
    ============================================================ */
 function initBackgroundMusic() {
   const toggle = document.getElementById('music-toggle');
@@ -508,56 +517,110 @@ function initBackgroundMusic() {
   const iconOff = toggle.querySelector('.music-off');
   let isPlaying = false;
   let audioCtx = null;
+  let masterGain = null;
+  let filter = null;
+  let delay = null;
+  let delayFeedback = null;
   let timerId = null;
-  let noteIndex = 0;
+  let stepIndex = 0;
 
-  // Cheerful pentatonic melody for kindergarten feel
-  const melody = [
-    { freq: 523.25, dur: 0.45 },
-    { freq: 587.33, dur: 0.45 },
-    { freq: 659.25, dur: 0.45 },
-    { freq: 783.99, dur: 0.55 },
-    { freq: 659.25, dur: 0.45 },
-    { freq: 587.33, dur: 0.45 },
-    { freq: 523.25, dur: 0.65 },
-    { freq: 392.0, dur: 0.55 },
-    { freq: 440.0, dur: 0.45 },
-    { freq: 493.88, dur: 0.45 },
-    { freq: 587.33, dur: 0.55 },
-    { freq: 523.25, dur: 0.7 }
+  // Full song phrase — melody (m), harmony (h), bass (b), arpeggio (a[]), duration (d)
+  const song = [
+    { m: 523.25, h: 659.25, b: 261.63, a: [523.25, 659.25, 783.99], d: 0.55 },
+    { m: 587.33, h: 739.99, b: 293.66, a: [587.33, 739.99, 880.0], d: 0.55 },
+    { m: 659.25, h: 783.99, b: 329.63, a: [659.25, 783.99, 987.77], d: 0.55 },
+    { m: 783.99, h: 987.77, b: 392.0,  a: [783.99, 987.77, 1174.66], d: 0.7 },
+    { m: 659.25, h: 783.99, b: 329.63, a: [659.25, 783.99, 987.77], d: 0.55 },
+    { m: 587.33, h: 739.99, b: 293.66, a: [587.33, 739.99, 880.0], d: 0.55 },
+    { m: 523.25, h: 659.25, b: 261.63, a: [523.25, 659.25, 783.99], d: 0.75 },
+    { m: 0, d: 0.25 },
+    { m: 392.0,  h: 493.88, b: 196.0,  a: [392.0, 493.88, 587.33], d: 0.55 },
+    { m: 440.0,  h: 554.37, b: 220.0,  a: [440.0, 554.37, 659.25], d: 0.55 },
+    { m: 493.88, h: 622.25, b: 246.94, a: [493.88, 622.25, 739.99], d: 0.55 },
+    { m: 587.33, h: 739.99, b: 293.66, a: [587.33, 739.99, 880.0], d: 0.7 },
+    { m: 523.25, h: 659.25, b: 261.63, a: [523.25, 659.25, 783.99], d: 0.55 },
+    { m: 587.33, h: 739.99, b: 293.66, a: [587.33, 739.99, 880.0], d: 0.55 },
+    { m: 659.25, h: 783.99, b: 329.63, a: [659.25, 783.99, 987.77], d: 0.55 },
+    { m: 783.99, h: 987.77, b: 392.0,  a: [783.99, 987.77, 1174.66], d: 0.85 }
   ];
 
-  function playNote(freq, duration) {
-    if (!audioCtx) return;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.value = freq;
-    const vol = CONFIG.musicVolume;
-    gain.gain.setValueAtTime(0, audioCtx.currentTime);
-    gain.gain.linearRampToValueAtTime(vol, audioCtx.currentTime + 0.04);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.start();
-    osc.stop(audioCtx.currentTime + duration + 0.05);
+  function setupAudioChain() {
+    if (audioCtx) return;
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    masterGain = audioCtx.createGain();
+    masterGain.gain.value = CONFIG.musicVolume;
+
+    filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 2800;
+    filter.Q.value = 0.7;
+
+    delay = audioCtx.createDelay(1.0);
+    delay.delayTime.value = 0.32;
+    delayFeedback = audioCtx.createGain();
+    delayFeedback.gain.value = 0.22;
+
+    masterGain.connect(filter);
+    filter.connect(delay);
+    delay.connect(delayFeedback);
+    delayFeedback.connect(delay);
+    delay.connect(audioCtx.destination);
+    filter.connect(audioCtx.destination);
   }
 
-  function scheduleNextNote() {
+  function playTone(freq, type, volume, duration, startTime, detune = 0) {
+    if (!freq || !audioCtx) return;
+    const t = startTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    osc.detune.value = detune;
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(Math.max(volume, 0.0001), t + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + duration);
+    osc.connect(gain);
+    gain.connect(masterGain);
+    osc.start(t);
+    osc.stop(t + duration + 0.08);
+  }
+
+  function playStep(step) {
+    if (!audioCtx || !step) return;
+    const t = audioCtx.currentTime;
+    const d = step.d;
+    const vol = CONFIG.musicVolume;
+
+    if (step.m) {
+      playTone(step.m, 'triangle', vol * 0.55, d, t);
+      playTone(step.m, 'sine', vol * 0.18, d * 0.9, t, 4);
+    }
+    if (step.h) {
+      playTone(step.h, 'sine', vol * 0.28, d * 1.05, t + 0.02);
+    }
+    if (step.b) {
+      playTone(step.b, 'sine', vol * 0.35, d * 1.25, t, -2);
+    }
+    if (step.a && step.a.length) {
+      const arpGap = d / (step.a.length + 1);
+      step.a.forEach((freq, i) => {
+        playTone(freq, 'sine', vol * 0.14, arpGap * 1.6, t + i * arpGap, i * 2);
+      });
+    }
+  }
+
+  function scheduleNextStep() {
     if (!isPlaying) return;
-    const note = melody[noteIndex % melody.length];
-    playNote(note.freq, note.dur);
-    noteIndex++;
-    timerId = setTimeout(scheduleNextNote, note.dur * 1000 + 80);
+    const step = song[stepIndex % song.length];
+    playStep(step);
+    stepIndex++;
+    timerId = setTimeout(scheduleNextStep, (step.d + 0.08) * 1000);
   }
 
   function startMusic() {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
+    setupAudioChain();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
     isPlaying = true;
     toggle.classList.add('playing');
     toggle.setAttribute('aria-pressed', 'true');
@@ -565,7 +628,7 @@ function initBackgroundMusic() {
     toggle.title = 'Pause melody';
     if (iconOn) iconOn.hidden = true;
     if (iconOff) iconOff.hidden = false;
-    scheduleNextNote();
+    scheduleNextStep();
   }
 
   function stopMusic() {
@@ -583,14 +646,9 @@ function initBackgroundMusic() {
     isPlaying ? stopMusic() : startMusic();
   });
 
-  // Try auto-start after page load (browsers may require user click first)
   window.addEventListener('load', () => {
     setTimeout(() => {
-      try {
-        startMusic();
-      } catch (e) {
-        /* User can tap the music button to start */
-      }
-    }, 2200);
+      try { startMusic(); } catch (e) { /* tap music button */ }
+    }, 2500);
   });
 }
