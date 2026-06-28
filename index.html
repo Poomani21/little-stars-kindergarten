@@ -38,6 +38,12 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
   </button>
 
+  <!-- Background Music Toggle -->
+  <button id="music-toggle" class="music-toggle" aria-label="Play background music" aria-pressed="false" title="Play melody">
+    <svg class="music-icon music-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"/></svg>
+    <svg class="music-icon music-off" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M4.27 3L3 4.27l9 9V17a3 3 0 003 3c.28 0 .53-.04.78-.1l2.73 2.73 1.27-1.27L4.27 3zM14 7h4V3h-6v6.17l2 2V7zM12 19a1 1 0 01-1-1v-3.17L4.59 7.59 3.18 6.18A4 4 0 004 10v6a4 4 0 004 4h.01A4 4 0 0012 19z"/></svg>
+  </button>
+
   <!-- Sticky Header -->
   <header class="header" id="header">
     <nav class="nav container" aria-label="Main navigation">
@@ -142,7 +148,9 @@
     </section>
 
     <!-- About Section -->
-    <section class="section about" id="about">
+    <section class="section about about-premium" id="about">
+      <div class="section-blob section-blob-1" aria-hidden="true"></div>
+      <div class="section-blob section-blob-2" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-tag">About Us</span>
@@ -150,18 +158,24 @@
           <p class="section-desc">Building confident, curious, and kind little learners since 2010.</p>
         </div>
         <div class="about-grid">
-          <article class="about-card reveal">
-            <div class="about-icon">🎯</div>
+          <article class="about-card reveal about-card-mission">
+            <div class="about-icon">
+              <img src="images/icons/mission.svg" alt="" width="88" height="88" loading="lazy">
+            </div>
             <h3>Our Mission</h3>
             <p>To nurture every child's natural curiosity through play-based learning, helping them grow into confident and compassionate individuals.</p>
           </article>
-          <article class="about-card reveal">
-            <div class="about-icon">👁️</div>
+          <article class="about-card reveal about-card-vision">
+            <div class="about-icon">
+              <img src="images/icons/vision.svg" alt="" width="88" height="88" loading="lazy">
+            </div>
             <h3>Our Vision</h3>
             <p>To be the most trusted early childhood center, where families feel proud and children love coming to school every day.</p>
           </article>
-          <article class="about-card reveal">
-            <div class="about-icon">💛</div>
+          <article class="about-card reveal about-card-values">
+            <div class="about-icon">
+              <img src="images/icons/values.svg" alt="" width="88" height="88" loading="lazy">
+            </div>
             <h3>Our Values</h3>
             <p>Love, safety, creativity, respect, and inclusivity guide everything we do — from classroom activities to parent partnerships.</p>
           </article>
@@ -189,40 +203,54 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section why-us" id="why-us">
+    <section class="section why-us why-us-premium" id="why-us">
+      <div class="section-wave-top" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-tag">Why Choose Us</span>
-          <h2 class="section-title">What Makes Little Stars Special</h2>
+          <span class="section-tag section-tag-light">Why Choose Us</span>
+          <h2 class="section-title section-title-light">What Makes Little Stars Special</h2>
+          <p class="section-desc section-desc-light">A magical blend of care, creativity, and world-class early learning.</p>
         </div>
         <div class="features-grid">
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>🧸</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-play.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Play-Based Learning</h3>
             <p>Hands-on activities, storytelling, and games that make learning natural and fun.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>🛡️</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-safe.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Safe Environment</h3>
             <p>CCTV monitoring, child-safe furniture, and trained staff for complete peace of mind.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>👩‍🏫</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-teacher.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Caring Teachers</h3>
             <p>Experienced, patient educators who understand early childhood development.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>🎨</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-art.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Creative Activities</h3>
             <p>Art, music, dance, and craft sessions to spark imagination and self-expression.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>🍎</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-snack.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Healthy Snacks</h3>
             <p>Nutritious meal plans and hygiene practices for growing little bodies.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-icon-wrap"><span>📱</span></div>
+            <div class="feature-icon-wrap">
+              <img src="images/icons/feature-parent.svg" alt="" width="56" height="56" loading="lazy">
+            </div>
             <h3>Parent Updates</h3>
             <p>Regular photos, progress reports, and open communication with parents.</p>
           </article>
