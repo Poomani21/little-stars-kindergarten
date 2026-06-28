@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Little Stars Kindergarten — nurturing Pre-KG and LKG programs with joyful learning, safe campus, and caring teachers. Enroll today!">
+  <meta name="keywords" content="kindergarten, Pre-KG, LKG, preschool, play school, admission, kids education">
+  <meta name="author" content="Little Stars Kindergarten">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Little Stars Kindergarten | Pre-KG & LKG">
+  <meta property="og:description" content="Where little minds shine bright. Premium Pre-KG and LKG programs for happy learners.">
+  <meta property="og:type" content="website">
+  <title>Little Stars Kindergarten | Pre-KG & LKG School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/icons/favicon.svg">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-content">
+      <div class="loader-star">⭐</div>
+      <p class="loader-text">Little Stars</p>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="#" id="whatsapp-float" class="whatsapp-float" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </button>
+
+  <!-- Sticky Header -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="Little Stars Kindergarten Home">
+        <span class="logo-icon">🌟</span>
+        <span class="logo-text">Little Stars</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#programs" class="nav-link">Programs</a></li>
+        <li><a href="#facilities" class="nav-link">Facilities</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#teachers" class="nav-link">Teachers</a></li>
+        <li><a href="#admission" class="nav-link nav-cta">Admission</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero / Banner Slider -->
+    <section id="home" class="hero" aria-label="Welcome banner">
+      <div class="hero-slider" id="hero-slider">
+        <div class="slide active" data-slide="0">
+          <div class="slide-bg slide-bg-1"></div>
+          <div class="container slide-content">
+            <span class="slide-badge">Welcome to Little Stars</span>
+            <h1>Where Little Minds <span class="highlight">Shine Bright</span></h1>
+            <p>Joyful Pre-KG & LKG learning in a safe, colorful, and caring environment.</p>
+            <div class="hero-buttons">
+              <a href="#admission" class="btn btn-primary">Apply for Admission</a>
+              <a href="#about" class="btn btn-outline">Explore Our School</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide" data-slide="1">
+          <div class="slide-bg slide-bg-2"></div>
+          <div class="container slide-content">
+            <span class="slide-badge">Play • Learn • Grow</span>
+            <h1>Learning Through <span class="highlight">Play & Wonder</span></h1>
+            <p>Activity-based curriculum designed for curious young explorers.</p>
+            <div class="hero-buttons">
+              <a href="#programs" class="btn btn-primary">View Programs</a>
+              <a href="#contact" class="btn btn-outline">Book a Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide" data-slide="2">
+          <div class="slide-bg slide-bg-3"></div>
+          <div class="container slide-content">
+            <span class="slide-badge">Admissions Open 2026</span>
+            <h1>Start Your Child's <span class="highlight">Happy Journey</span></h1>
+            <p>Limited seats for Pre-KG and LKG. Enroll today!</p>
+            <div class="hero-buttons">
+              <a href="#admission" class="btn btn-primary">Enroll Now</a>
+              <a href="#faq" class="btn btn-outline">Read FAQ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" id="slider-prev" aria-label="Previous slide">&#10094;</button>
+      <button class="slider-btn slider-next" id="slider-next" aria-label="Next slide">&#10095;</button>
+      <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Slide navigation"></div>
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape shape-1">🎈</span>
+        <span class="shape shape-2">🌈</span>
+        <span class="shape shape-3">⭐</span>
+        <span class="shape shape-4">🎨</span>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="section welcome" id="welcome">
+      <div class="container">
+        <div class="welcome-grid">
+          <div class="welcome-image reveal">
+            <img src="images/banner/welcome.svg" alt="Happy children learning at Little Stars Kindergarten" width="500" height="400" loading="lazy">
+            <div class="welcome-badge">
+              <span class="badge-number" data-count="15">0</span>+
+              <span class="badge-text">Years of Joy</span>
+            </div>
+          </div>
+          <div class="welcome-text reveal">
+            <span class="section-tag">Welcome</span>
+            <h2 class="section-title">A Happy Place to Begin Learning</h2>
+            <p>At <strong>Little Stars Kindergarten</strong>, we believe every child deserves a warm, playful start to education. Our Pre-KG and LKG programs blend fun activities with foundational skills in language, numbers, creativity, and social development.</p>
+            <p>From colorful classrooms to caring teachers, we create an environment where children feel safe, loved, and excited to learn every single day.</p>
+            <ul class="welcome-list">
+              <li>✅ Child-centered learning approach</li>
+              <li>✅ Safe and hygienic campus</li>
+              <li>✅ Small class sizes for personal attention</li>
+              <li>✅ Parent-friendly communication</li>
+            </ul>
+            <a href="#about" class="btn btn-secondary">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">Our Story & Mission</h2>
+          <p class="section-desc">Building confident, curious, and kind little learners since 2010.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <div class="about-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>To nurture every child's natural curiosity through play-based learning, helping them grow into confident and compassionate individuals.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="about-icon">👁️</div>
+            <h3>Our Vision</h3>
+            <p>To be the most trusted early childhood center, where families feel proud and children love coming to school every day.</p>
+          </article>
+          <article class="about-card reveal">
+            <div class="about-icon">💛</div>
+            <h3>Our Values</h3>
+            <p>Love, safety, creativity, respect, and inclusivity guide everything we do — from classroom activities to parent partnerships.</p>
+          </article>
+        </div>
+        <!-- Animated Counters -->
+        <div class="stats-grid reveal" id="stats">
+          <div class="stat-item">
+            <span class="stat-number" data-count="500">0</span>
+            <span class="stat-label">Happy Students</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="25">0</span>
+            <span class="stat-label">Expert Teachers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="15">0</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="98">0</span>
+            <span class="stat-label">Parent Satisfaction %</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-us" id="why-us">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Why Choose Us</span>
+          <h2 class="section-title">What Makes Little Stars Special</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>🧸</span></div>
+            <h3>Play-Based Learning</h3>
+            <p>Hands-on activities, storytelling, and games that make learning natural and fun.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>🛡️</span></div>
+            <h3>Safe Environment</h3>
+            <p>CCTV monitoring, child-safe furniture, and trained staff for complete peace of mind.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>👩‍🏫</span></div>
+            <h3>Caring Teachers</h3>
+            <p>Experienced, patient educators who understand early childhood development.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>🎨</span></div>
+            <h3>Creative Activities</h3>
+            <p>Art, music, dance, and craft sessions to spark imagination and self-expression.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>🍎</span></div>
+            <h3>Healthy Snacks</h3>
+            <p>Nutritious meal plans and hygiene practices for growing little bodies.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon-wrap"><span>📱</span></div>
+            <h3>Parent Updates</h3>
+            <p>Regular photos, progress reports, and open communication with parents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Our Programs</span>
+          <h2 class="section-title">Pre-KG & LKG Classes</h2>
+          <p class="section-desc">Age-appropriate programs designed for joyful early learning.</p>
+        </div>
+        <div class="programs-grid">
+          <article class="program-card reveal">
+            <div class="program-badge">Ages 2.5 – 3.5</div>
+            <div class="program-icon">🐣</div>
+            <h3>Pre-KG</h3>
+            <p>Our Pre-KG program introduces toddlers to school routines through sensory play, rhymes, colors, shapes, and social skills in a gentle, nurturing setting.</p>
+            <ul class="program-list">
+              <li>Sensory & motor skill activities</li>
+              <li>Phonics & pre-reading basics</li>
+              <li>Number recognition & counting</li>
+              <li>Social interaction & sharing</li>
+              <li>Story time & creative play</li>
+            </ul>
+            <a href="#admission" class="btn btn-primary btn-sm">Enroll in Pre-KG</a>
+          </article>
+          <article class="program-card program-featured reveal">
+            <div class="program-badge">Ages 3.5 – 5</div>
+            <div class="program-icon">🦋</div>
+            <h3>LKG</h3>
+            <p>Our LKG program builds school readiness with structured literacy, numeracy, science exploration, and confidence-building activities for kindergarten transition.</p>
+            <ul class="program-list">
+              <li>Reading & writing readiness</li>
+              <li>Math concepts & problem solving</li>
+              <li>Environmental awareness</li>
+              <li>Public speaking & presentations</li>
+              <li>Physical education & yoga</li>
+            </ul>
+            <a href="#admission" class="btn btn-primary btn-sm">Enroll in LKG</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="section facilities" id="facilities">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Facilities</span>
+          <h2 class="section-title">World-Class Campus for Little Learners</h2>
+        </div>
+        <div class="facilities-grid">
+          <article class="facility-card reveal">
+            <img src="images/gallery/facility-classroom.svg" alt="Colorful classroom" loading="lazy">
+            <div class="facility-info">
+              <h3>Colorful Classrooms</h3>
+              <p>Bright, air-conditioned rooms with child-friendly furniture and learning corners.</p>
+            </div>
+          </article>
+          <article class="facility-card reveal">
+            <img src="images/gallery/facility-playground.svg" alt="Outdoor playground" loading="lazy">
+            <div class="facility-info">
+              <h3>Playground</h3>
+              <p>Safe outdoor play area with swings, slides, and sand pit for active fun.</p>
+            </div>
+          </article>
+          <article class="facility-card reveal">
+            <img src="images/gallery/facility-library.svg" alt="Kids library" loading="lazy">
+            <div class="facility-info">
+              <h3>Story Corner</h3>
+              <p>A cozy reading nook filled with picture books and storytelling sessions.</p>
+            </div>
+          </article>
+          <article class="facility-card reveal">
+            <img src="images/gallery/facility-art.svg" alt="Art and craft room" loading="lazy">
+            <div class="facility-info">
+              <h3>Art & Craft Studio</h3>
+              <p>Dedicated space for painting, clay modeling, and creative expression.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Gallery</span>
+          <h2 class="section-title">Moments of Joy & Learning</h2>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+          <figure class="gallery-item reveal" data-index="0">
+            <img src="images/gallery/gallery-1.svg" alt="Children playing together" loading="lazy">
+            <figcaption>Play Time Fun</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-index="1">
+            <img src="images/gallery/gallery-2.svg" alt="Art and craft activity" loading="lazy">
+            <figcaption>Creative Arts</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-index="2">
+            <img src="images/gallery/gallery-3.svg" alt="Story telling session" loading="lazy">
+            <figcaption>Story Time</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-index="3">
+            <img src="images/gallery/gallery-4.svg" alt="Annual day celebration" loading="lazy">
+            <figcaption>Annual Day</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-index="4">
+            <img src="images/gallery/gallery-5.svg" alt="Outdoor activities" loading="lazy">
+            <figcaption>Outdoor Fun</figcaption>
+          </figure>
+          <figure class="gallery-item reveal" data-index="5">
+            <img src="images/gallery/gallery-6.svg" alt="Music and dance" loading="lazy">
+            <figcaption>Music & Dance</figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery" hidden>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close gallery">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <img src="" alt="" id="lightbox-img">
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Testimonials</span>
+          <h2 class="section-title">What Parents Say</h2>
+        </div>
+        <div class="testimonials-slider" id="testimonials-slider">
+          <blockquote class="testimonial active">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"My daughter loves going to Little Stars every day! The teachers are so caring and the activities are wonderful. We've seen amazing growth in her confidence."</p>
+            <footer>
+              <strong>Priya Sharma</strong>
+              <span>Parent of LKG Student</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"The best decision we made for our son's early education. Safe campus, friendly staff, and regular updates keep us connected to his learning journey."</p>
+            <footer>
+              <strong>Rajesh Kumar</strong>
+              <span>Parent of Pre-KG Student</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"A truly premium kindergarten experience at an affordable fee. The play-based approach helped my child develop social skills and love for learning."</p>
+            <footer>
+              <strong>Anitha Reddy</strong>
+              <span>Parent of LKG Student</span>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="testimonial-dots" id="testimonial-dots"></div>
+      </div>
+    </section>
+
+    <!-- Teachers -->
+    <section class="section teachers" id="teachers">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Our Team</span>
+          <h2 class="section-title">Meet Our Loving Teachers</h2>
+          <p class="section-desc">Passionate educators dedicated to your child's growth.</p>
+        </div>
+        <div class="teachers-grid">
+          <article class="teacher-card reveal">
+            <div class="teacher-photo">
+              <img src="images/teachers/teacher-1.svg" alt="Mrs. Meera Nair - Principal" loading="lazy">
+            </div>
+            <h3>Mrs. Meera Nair</h3>
+            <span class="teacher-role">Principal</span>
+            <p>15+ years in early childhood education with a passion for nurturing young minds.</p>
+          </article>
+          <article class="teacher-card reveal">
+            <div class="teacher-photo">
+              <img src="images/teachers/teacher-2.svg" alt="Ms. Kavitha - Pre-KG Teacher" loading="lazy">
+            </div>
+            <h3>Ms. Kavitha</h3>
+            <span class="teacher-role">Pre-KG Teacher</span>
+            <p>Specialist in play-based learning and sensory development for toddlers.</p>
+          </article>
+          <article class="teacher-card reveal">
+            <div class="teacher-photo">
+              <img src="images/teachers/teacher-3.svg" alt="Mr. Arjun - LKG Teacher" loading="lazy">
+            </div>
+            <h3>Mr. Arjun</h3>
+            <span class="teacher-role">LKG Teacher</span>
+            <p>Expert in literacy readiness and creative classroom engagement.</p>
+          </article>
+          <article class="teacher-card reveal">
+            <div class="teacher-photo">
+              <img src="images/teachers/teacher-4.svg" alt="Ms. Divya - Activity Coordinator" loading="lazy">
+            </div>
+            <h3>Ms. Divya</h3>
+            <span class="teacher-role">Activity Coordinator</span>
+            <p>Leads art, music, dance, and annual event programs with enthusiasm.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission CTA -->
+    <section class="section admission-cta" id="admission">
+      <div class="container">
+        <div class="admission-banner reveal">
+          <div class="admission-content">
+            <span class="section-tag section-tag-light">Admissions Open</span>
+            <h2>Give Your Child the Best Start</h2>
+            <p>Limited seats available for Pre-KG and LKG. Apply today and join the Little Stars family!</p>
+            <ul class="admission-steps">
+              <li><span>1</span> Fill the enquiry form</li>
+              <li><span>2</span> Schedule a campus visit</li>
+              <li><span>3</span> Complete registration</li>
+            </ul>
+            <a href="#contact" class="btn btn-light">Start Application</a>
+          </div>
+          <div class="admission-illustration" aria-hidden="true">
+            <img src="images/banner/admission.svg" alt="" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list reveal" id="faq-list">
+          <details class="faq-item">
+            <summary>What is the age criteria for Pre-KG and LKG?</summary>
+            <p>Pre-KG is for children aged 2.5 to 3.5 years, and LKG is for children aged 3.5 to 5 years as of June 1st of the academic year.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are the school timings?</summary>
+            <p>School operates from 9:00 AM to 12:30 PM, Monday through Friday. Optional daycare extension is available until 4:00 PM.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is transport facility available?</summary>
+            <p>Yes, we provide safe van transport covering nearby areas. Please contact us for route availability and fees.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What documents are needed for admission?</summary>
+            <p>Birth certificate, Aadhaar card, passport-size photos, and previous school records (if applicable) are required during registration.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I track my child's progress?</summary>
+            <p>We share regular photo updates, monthly progress reports, and conduct parent-teacher meetings every term.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Contact Us</span>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-desc">We'd love to hear from you. Send us an enquiry today!</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-card">
+              <span class="contact-icon">📍</span>
+              <div>
+                <h3>Address</h3>
+                <p>123 Rainbow Street, Green Park,<br>Your City, State – 600001</p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">📞</span>
+              <div>
+                <h3>Phone</h3>
+                <p><a href="tel:+919578777149">+91 95787 77149</a></p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:spoomani21@gmail.com" id="email-link">spoomani21@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <span class="contact-icon">🕐</span>
+              <div>
+                <h3>Office Hours</h3>
+                <p>Mon – Fri: 9:00 AM – 4:00 PM<br>Sat: 9:00 AM – 1:00 PM</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook" class="social-link">📘</a>
+              <a href="#" aria-label="Instagram" class="social-link">📷</a>
+              <a href="#" aria-label="YouTube" class="social-link">▶️</a>
+              <a href="#" id="social-whatsapp" aria-label="WhatsApp" class="social-link">💬</a>
+            </div>
+          </div>
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="student-name">Student Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="student-name" name="studentName" required placeholder="Child's full name" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="parent-name">Parent Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="parent-name" name="parentName" required placeholder="Parent / guardian name" autocomplete="name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="age">Student Age <span aria-hidden="true">*</span></label>
+                <input type="text" id="age" name="age" required placeholder="e.g. 3 years">
+              </div>
+              <div class="form-group">
+                <label for="class">Class <span aria-hidden="true">*</span></label>
+                <select id="class" name="class" required>
+                  <option value="">Select class</option>
+                  <option value="Pre-KG">Pre-KG</option>
+                  <option value="LKG">LKG</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your enquiry..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Submit via WhatsApp</span>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </button>
+            <p class="form-note">Form opens WhatsApp with your details pre-filled. No data is stored on any server.</p>
+          </form>
+        </div>
+        <!-- Google Maps -->
+        <div class="map-container reveal">
+          <iframe
+            title="Little Stars Kindergarten location on Google Maps"
+            src="https://maps.google.com/maps?q=Chennai%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-icon">🌟</span>
+            <span class="logo-text">Little Stars</span>
+          </a>
+          <p>Nurturing happy, confident learners through play-based Pre-KG and LKG programs.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#admission">Admission</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#programs">Pre-KG (2.5–3.5 yrs)</a></li>
+            <li><a href="#programs">LKG (3.5–5 yrs)</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📞 <a href="tel:+919578777149">+91 95787 77149</a></p>
+          <p>✉️ <a href="mailto:spoomani21@gmail.com">spoomani21@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Little Stars Kindergarten. All rights reserved.</p>
+        <p>Made with 💛 for little learners</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

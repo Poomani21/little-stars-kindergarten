@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350">
+  <rect width="400" height="350" rx="20" fill="#E8F8F5"/>
+  <rect x="40" y="60" width="320" height="200" rx="16" fill="#4ECDC4" opacity="0.3"/>
+  <text x="200" y="180" text-anchor="middle" font-size="80">=Ý</text>
+  <text x="200" y="300" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#2D3436">Apply Today!</text>
+  <circle cx="60" cy="60" r="25" fill="#FFE66D"/>
+  <circle cx="340" cy="80" r="20" fill="#FF6B6B" opacity="0.6"/>
+</svg>
